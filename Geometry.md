@@ -189,6 +189,21 @@ value_new = (value_old * 7.77) + 7
     SW: (1, 4)
     SE: (5, 4)
     
+    
+ New values are 
+ 
+ inside bottom left: (5, 6)
+ inside bottom: (7.5, 4)
+ inside bottom right: (10, 6)
+ inside top left: (6, 9)
+ inside top right: (9, 9)
+ top: (7.5, 15)
+ top right: (15,9)
+ top left: (0, 9)
+ bottom left: (12,0)
+ bottom right: (3, 0)
+ 
+    
 
 
 
