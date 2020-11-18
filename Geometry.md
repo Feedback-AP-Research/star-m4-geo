@@ -192,16 +192,16 @@ value_new = (value_old * 7.77) + 7
     
  New values are 
  
- inside bottom left: (4, 7)
- inside bottom: (8, 4)
- inside bottom right: (11, 7)
+ inside bottom left: (5, 6)
+ inside bottom: (8, 3)
+ inside bottom right: (11, 6)
  inside top left: (6, 10)
  inside top right: (10, 10)
- top: (8, 15)
- top right: (15, 10)
+ top: (8, 14)
+ top right: (14, 10)
  top left: (1, 10)
- bottom left: (13,1)
- bottom right: (2, 1)
+ bottom left: (4,1)
+ bottom right: (12, 1)
  
     
 
