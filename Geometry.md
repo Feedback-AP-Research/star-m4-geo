@@ -96,6 +96,12 @@ Before continuing, a clarification must be made
 
 FeedBack consists of 4 stars, and as the board is 64 pixels long and 32 tall, 16 pixels of length is the most to work with, and as the star's  circle will be inscribed by a square, width must equal height.
 
+If split down the middle directly, 8 pixels of length will be on the left, and 8 to the right, however there can not exist a center point at 8.5. 
+
+To solve this, one pixel will forever be off as a gap between stars, to create a better user experience, and placing the center at 8 from 1 to 15.
+
+So, the new dimensions will be 15 x 15
+
 The cortesian coordinate system will be 16x16, and each subsequent star will be shifted 16(n -1) pixels to the right.
 
     x1 = 0
@@ -121,54 +127,17 @@ The scaler values are proportial to radius r, thus all vertices (10) can be defi
     S: (-x3*r, y3*r)
     SW: (-x5*r, y2*r)
     SE: (-x2*r, y2*r)
-
-Now the question pertains: what is r?
-
-Examining y and x extremas:
-ymax = .809017
-ymin = -1 
-xmax = .951057
-xmin = 0
-
-The largest value, to focus on, is xmax
-
-By setting a ratio of (.95 + 1)/1 = x/1: the proportion is found to be 1.9
-
-By adding 1 to all values, then dividing the numbers by half of 1.9, the determinants can be found
-
-The half is found, as the radius must be half of what it previous was of 1, as the diameter is now 1
-
-For example: xmax = .951057 
-.951 + 1 = 1.951 / (1.9 /2) = 1,
-
-1.052
-Doing this for the rest of the vertices: 
-
-    x1 = 0
-    x2 = .224514
-    x3 = .363271
-    x4 = .587785
-    x5 = .951057
-    y1 = -1
-    y2 = -.309017
-    y3 = .118034
-    y4 = .381966
-    y5 = .809017
     
-    
-    
-The scaler values are proportial to radius r, thus all vertices (10) can be defined as:
+where r is equal to half of what it previous was of 1, 1/2, as the diameter is now 1
 
-    top tip: (x1*r, y1*r)
-    top right tip: (x2*r, y2*r)
-    bottom left tip: (x5*r, y2*r)
-    bottom right tip: (x3*r, y3*r)
-    top left tip: (x4*r, y5*r)
-    NE: (x1*r, y4*r)
-    NW: (-x4*r, y5*r)
-    S: (-x3*r, y3*r)
-    SW: (-x5*r, y2*r)
-    SE: (-x2*r, y2*r)
+With a circumradius of 7 to the center point, the inital coordinate system will be mapped from (0, 0) to (7,7) origin. 
+
+Lastly, the values must be scaled from radius 1/2 to radius 7, or 14:1 diameter ratio
+
+To determine the amount to scale by, whatever is applied to x must be applied to the y dimension, thus the larger difference in extremas will be included in the ratio. 
+
+
+
 
 
 
