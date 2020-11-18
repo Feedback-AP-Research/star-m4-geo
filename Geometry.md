@@ -137,6 +137,60 @@ Lastly, the values must be scaled from radius 1/2 to radius 7, or 14:1 diameter 
 To determine the amount to scale by, whatever is applied to x must be applied to the y dimension, thus the larger difference in extremas will be included in the ratio. 
 
 
+Examining y and x extremas:
+ymax = .809017
+ymin = -1 
+xmax = .951057
+xmin = 0
+
+The largest value, to focus on, is ymax, with delta ymax being 1.809017
+
+By setting a ratio of 14/1 = 1.809017/r
+r = 0.12857142857
+Thus, the new model can be found by multiplying the vertices points by 7.77777777786
+
+value_new = (value_old * 7.77) + 7
+ 
+ This may go a bit over, as technically the center point still counts as part of the radius, but in the model it is ignored. Either way, the slight invariance is balanced out when the product is rounded to the nearest whole number. 
+ 
+ Plugging it in, the new values are found to be:
+  
+    x1*r = 8 
+    x2*r = 8.7444 ~ 9
+    x3*r = 9.8226 ~ 10
+    x4*r = 11.567 ~ 11
+    x5*r = 14.3897 ~ 15
+    y1*r = -15 
+    y2*r = 4.032 ~ 4
+    y3*r = 7.8547 ~ 8
+    y4*r = 9.967875 ~ 10
+    y5*r = 13.286 ~ 13   
+ 
+    top tip: (8, 15)
+    top right tip: (9, 4)
+    bottom left tip: (15, 4)
+    bottom right tip: (10, 8)
+    top left tip: (11, 13)
+    NE: (8, 10)
+    NW: (-11, 13)
+    S: (-10, 8)
+    SW: (-15, 4)
+    SE: (-9, 4)
+    
+    From the leftover transformation there are a couple negative values that need to be cleaned up, as they are not really negative,
+    
+    -10 => 10 - 7 = 3 => 7 - 3 = 4 
+    -11 => 11 - 7 = 4 => 7 - 4 = 3
+    -15 => 15 - 7 = 8 => 7 - 6 = 1
+    -9 => 9 - 7 = 2 => 7 - 2 = 5
+ Updating to:
+    NW: (3, 13)
+    S: (4, 8)
+    SW: (1, 4)
+    SE: (5, 4)
+    
+
+
 
 
 
