@@ -98,8 +98,77 @@ FeedBack consists of 4 stars, and as the board is 64 pixels long and 32 tall, 16
 
 The cortesian coordinate system will be 16x16, and each subsequent star will be shifted 16(n -1) pixels to the right.
 
+    x1 = 0
+    x2 = .224514
+    x3 = .363271
+    x4 = .587785
+    x5 = .951057
+    y1 = -1
+    y2 = -.309017
+    y3 = .118034
+    y4 = .381966
+    y5 = .809017
+    
+The scaler values are proportial to radius r, thus all vertices (10) can be defined as:
 
-   
+    top tip: (x1*r, y1*r)
+    top right tip: (x2*r, y2*r)
+    bottom left tip: (x5*r, y2*r)
+    bottom right tip: (x3*r, y3*r)
+    top left tip: (x4*r, y5*r)
+    NE: (x1*r, y4*r)
+    NW: (-x4*r, y5*r)
+    S: (-x3*r, y3*r)
+    SW: (-x5*r, y2*r)
+    SE: (-x2*r, y2*r)
+
+Now the question pertains: what is r?
+
+Examining y and x extremas:
+ymax = .809017
+ymin = -1 
+xmax = .951057
+xmin = 0
+
+The largest value, to focus on, is xmax
+
+By setting a ratio of (.95 + 1)/1 = x/1: the proportion is found to be 1.9
+
+By adding 1 to all values, then dividing the numbers by half of 1.9, the determinants can be found
+
+The half is found, as the radius must be half of what it previous was of 1, as the diameter is now 1
+
+For example: xmax = .951057 
+.951 + 1 = 1.951 / (1.9 /2) = 1,
+
+1.052
+Doing this for the rest of the vertices: 
+
+    x1 = 0
+    x2 = .224514
+    x3 = .363271
+    x4 = .587785
+    x5 = .951057
+    y1 = -1
+    y2 = -.309017
+    y3 = .118034
+    y4 = .381966
+    y5 = .809017
     
     
-  
+    
+The scaler values are proportial to radius r, thus all vertices (10) can be defined as:
+
+    top tip: (x1*r, y1*r)
+    top right tip: (x2*r, y2*r)
+    bottom left tip: (x5*r, y2*r)
+    bottom right tip: (x3*r, y3*r)
+    top left tip: (x4*r, y5*r)
+    NE: (x1*r, y4*r)
+    NW: (-x4*r, y5*r)
+    S: (-x3*r, y3*r)
+    SW: (-x5*r, y2*r)
+    SE: (-x2*r, y2*r)
+
+
+
